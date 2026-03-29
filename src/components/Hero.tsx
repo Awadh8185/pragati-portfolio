@@ -8,7 +8,8 @@ export function Hero() {
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center pb-10 pt-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-background">
       {/* Background decoration */}
-      {/* Background decoration has been removed to fix blurriness issues */}
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-900/10 dark:bg-pink-900/10 rounded-full blur-[120px] -z-10" />
 
       {/* Interactive Particles */}
       <ParticleBackground />
@@ -81,7 +82,8 @@ export function Hero() {
             className="flex justify-center lg:justify-end relative"
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-              {/* Glowing ring behind the image removed to fix blurriness */}
+              {/* Glowing ring behind the image */}
+              <div className="absolute inset-0 rounded-full bg-pink-500/20 dark:bg-pink-500/10 blur-3xl scale-110 z-0" />
               
               <div className="relative w-full h-full rounded-full border-[6px] border-pink-500/80 dark:border-pink-400/80 shadow-[0_0_50px_rgba(236,72,153,0.4)] dark:shadow-[0_0_50px_rgba(244,63,94,0.3)] overflow-hidden z-10">
                 <img 

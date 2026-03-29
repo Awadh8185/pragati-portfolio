@@ -45,14 +45,16 @@ export function ParticleBackground() {
     };
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.scale(dpr, dpr);
       init();
     };
 
     const init = () => {
       particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 10000); // Responsive density
+      const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 10000); // Responsive density
       const isDark = resolvedTheme === "dark";
       
       const colors = isDark 
@@ -60,8 +62,8 @@ export function ParticleBackground() {
         : ["rgba(219, 39, 119, 0.4)", "rgba(225, 29, 72, 0.4)", "rgba(0, 0, 0, 0.1)"]; // Light mode colors (pink, rose, faint black)
 
       for (let i = 0; i < particleCount; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
         const size = Math.random() * 2 + 1; // Size between 1 and 3
         const color = colors[Math.floor(Math.random() * colors.length)];
         
