@@ -25,6 +25,13 @@ export function Achievements() {
       description: "Secured First Runner-up position in the Speaking Competition organized by the Centre for Professional Enhancement – LPU.",
       color: "text-rose-500",
       bgColor: "bg-rose-500/10",
+    },
+    {
+      icon: Code,
+      title: "4th Place - Code of Duty Hackathon",
+      description: "Secured 4th place in the 'Code of Duty' web development hackathon, demonstrating strong full-stack skills under pressure.",
+      color: "text-fuchsia-500",
+      bgColor: "bg-fuchsia-500/10",
     }
   ];
 
@@ -44,7 +51,7 @@ export function Achievements() {
           <div className="h-1 w-20 bg-pink-600 dark:bg-pink-400 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {achievements.map((item, index) => {
             const Icon = item.icon;
             return (
